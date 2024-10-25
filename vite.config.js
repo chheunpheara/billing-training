@@ -39,10 +39,6 @@ export default defineConfig({
                     dest: '../plugins/moment'
                 },
                 {
-                    src: 'node_modules/alpinejs/dist/cdn.min.js',
-                    dest: '../plugins/alpinejs'
-                },
-                {
                     src: 'node_modules/bootstrap-icons/*',
                     dest: '../plugins/bootstrap-icons'
                 },

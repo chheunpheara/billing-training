@@ -1,7 +1,7 @@
 <div>
     <div class="modal-header">
         <h4 class="modal-title">@lang('bt.add_items_from', ['resource_type' => $resource_type . 's'])</h4>
-        <div class="float-right">
+        <div class="ms-auto">
             <button type="button" class="btn btn-secondary"
                     data-bs-dismiss="modal">
                 @lang('bt.cancel')
