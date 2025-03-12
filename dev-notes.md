@@ -1,3 +1,4 @@
+added de,en,es,fr,it,ja translations using https://github.com/alisalehi1380/laravel-lang-files-translator 
 
 update to rappasoft/livewire-tables v3 beta 11 - publishing views adds "rappasoft" directory in vendor.
 previously published under vendor/livewire-tables. must remove "rappsoft" to use published views.  

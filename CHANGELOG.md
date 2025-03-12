@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 7.0.4
+- fix modal button positions
+- update to Laravel 12
+- update dependencies
+- added german, spanish, french, italian and japanese translations  
+
 ## 7.0.3
 - fix workorder_to_invoice modal to reflect workorder job_date
 - update bulk-action.blade.php to reflect livewire-datatables changes
