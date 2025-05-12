@@ -45,7 +45,7 @@ class CreatePaymentModal extends Component
             $this->module = $module_model;
             $this->resource_id = $module_model->client_id;
             $this->invoice_id = $module_model->id;
-            $this->amount = $module_model->amount->formatted_numeric_balance;
+            $this->amount = $module_model->amount->formatted_numeric_balance_no_thou_sep;
         }
 
         if ($readonly) {
@@ -74,7 +74,7 @@ class CreatePaymentModal extends Component
 
     public function updatedInvoiceId()
     {
-        $this->amount = $this->client_invoices->find($this->invoice_id)->amount->formatted_numeric_balance;
+        $this->amount = $this->client_invoices->find($this->invoice_id)->amount->formatted_numeric_balance_no_thou_sep;
     }
 
     public function validationAttributes()

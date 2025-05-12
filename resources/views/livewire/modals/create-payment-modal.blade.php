@@ -45,7 +45,7 @@
                             </option>
                             @foreach($client_invoices as $invoice)
                                 <option value="{{ $invoice->id }}">
-                                    {{ $invoice->number . ' - ' . __('bt.due') .': ' . $invoice->formatted_due_at . ' - ' . __('bt.balance') . $invoice->amount->formatted_numeric_balance }}
+                                    {{ $invoice->number . ' - ' . __('bt.due') .': ' . $invoice->formatted_action_date . ' - ' . __('bt.balance') . $invoice->amount->formatted_numeric_balance }}
                                 </option>
                             @endforeach
                         </select>

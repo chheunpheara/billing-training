@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 7.0.5
+- fix amount format (comma) in payment modal dialog
+- fix stray formatted_due_at in payment modal dialog
+- update all dependencies
+
 ## 7.0.4
 - fix modal button positions
 - update to Laravel 12

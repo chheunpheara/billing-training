@@ -2,6 +2,11 @@ Release Notes
 ---
 ---
 
+### BillingTrack 7.0.5
+- fix amount format (comma) in payment modal dialog
+- fix stray formatted_due_at in payment modal dialog
+- update all dependencies
+
 ### BillingTrack 7.0.4
 - fix modal button positions
 - update to Laravel 12

@@ -103,6 +103,11 @@ class DocumentAmount extends Model
         return new Attribute(get: fn () => NumberFormatter::format($this->balance));
     }
 
+    public function formattedNumericBalanceNoThouSep(): Attribute
+    {
+        return new Attribute(get: fn () => NumberFormatter::format_no_thou_sep($this->balance));
+    }
+
     public function formattedDiscount(): Attribute
     {
         return new Attribute(get: fn () => CurrencyFormatter::format($this->discount, $this->document->currency));

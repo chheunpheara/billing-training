@@ -30,6 +30,22 @@ class NumberFormatter
     }
 
     /**
+     * Formats a number accordingly without thousands separator.
+     *
+     * @param  float  $number
+     * @param  object  $currency
+     * @param  int  $decimalPlaces
+     * @return string
+     */
+    public static function format_no_thou_sep($number, $currency = null, $decimalPlaces = null)
+    {
+        $currency = ($currency) ?: config('bt.currency');
+        $decimalPlaces = ($decimalPlaces) ?: config('bt.amountDecimals');
+
+        return number_format((float) $number, $decimalPlaces, $currency->decimal, "");
+    }
+
+    /**
      * Unformats a formatted number.
      *
      * @param  float  $number
