@@ -1,3 +1,9 @@
+// Font Awesome
+@use "~@fortawesome/fontawesome-free/scss/fontawesome";
+@use "~@fortawesome/fontawesome-free/scss/brands.scss" as fa-brands;
+@use "~@fortawesome/fontawesome-free/scss/regular.scss" as fa-regular;
+@use "~@fortawesome/fontawesome-free/scss/solid.scss" as fa-solid;
+
 // Fonts
 //@import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -6,12 +12,6 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-// Font Awesome
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
 
 //flatpickr
 @import "~flatpickr/dist/flatpickr.css";

@@ -50,6 +50,10 @@ export default defineConfig({
                     src: 'resources/public/*',
                     dest: '../'
                 },
+                {
+                    src: 'node_modules/@fortawesome/fontawesome-free/webfonts/*',
+                    dest: '../build/webfonts'
+                },
 
             ]
         })
