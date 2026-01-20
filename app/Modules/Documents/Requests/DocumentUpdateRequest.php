@@ -18,7 +18,6 @@ class DocumentUpdateRequest extends DocumentStoreRequest
     public function prepareForValidation()
     {
         $request = $this->all();
-
         if (isset($request['items'])) {
             foreach ($request['items'] as $key => $item) {
                 $request['items'][$key]['quantity'] = NumberFormatter::unformat($item['quantity']);
@@ -26,21 +25,35 @@ class DocumentUpdateRequest extends DocumentStoreRequest
             }
         }
 
+        //if not a workorder...
+        if ($request['start_time'] == null && $request['end_time'] == null) {
+            array_forget($request, ['start_time', 'end_time']);
+        }
         $this->replace($request);
+
     }
 
     public function rules()
     {
         return [
-            'summary' => 'max:255',
-            'document_date' => 'required',
-            'number' => 'required',
+            'summary'            => 'max:255',
+            'document_date'      => 'required',
+            'number'             => 'required',
             'document_status_id' => 'required',
-            'exchange_rate' => 'required|numeric',
-            'template' => 'required',
-            'items.*.name' => 'required_with:items.*.price,items.*.quantity',
-            'items.*.quantity' => 'required_with:items.*.price,items.*.name|numeric',
-            'items.*.price' => 'required_with:items.*.name,items.*.quantity|numeric',
+            'exchange_rate'      => 'required|numeric',
+            'template'           => 'required',
+            'items.*.name'       => 'required_with:items.*.price,items.*.quantity',
+            'items.*.quantity'   => 'required_with:items.*.price,items.*.name|numeric',
+            'items.*.price'      => 'required_with:items.*.name,items.*.quantity|numeric',
+            'start_time'         => 'sometimes|required|date_format:H:i',
+            'end_time'           => 'sometimes|required|date_format:H:i|after:start_time',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'end_time.after' => trans('bt.validation_end_time_after'),
         ];
     }
 }

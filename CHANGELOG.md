@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 7.0.6
+- fix job end_time validation in workorders
+- update all dependencies
+
 ## 7.0.5
 - fix amount format (comma) in payment modal dialog
 - fix stray formatted_due_at in payment modal dialog
