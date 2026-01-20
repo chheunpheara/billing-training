@@ -2,6 +2,11 @@ Release Notes
 ---
 ---
 
+### BillingTrack 7.0.6
+- fix job end_time validation in workorders
+- update all dependencies
+- fix fontawesome v7 compile
+
 ### BillingTrack 7.0.5
 - fix amount format (comma) in payment modal dialog
 - fix stray formatted_due_at in payment modal dialog

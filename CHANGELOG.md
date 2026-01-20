@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 7.0.6
 - fix job end_time validation in workorders
 - update all dependencies
+- fix fontawesome v7 compile
 
 ## 7.0.5
 - fix amount format (comma) in payment modal dialog
