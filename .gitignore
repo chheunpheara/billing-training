@@ -20,4 +20,8 @@ _ide_helper.php
 /changeperms.sh
 /testattachment.txt
 /TODO.md
-/BillingTrackWired.mwb.bak
+/invoices
+!/invoices/.gitkeep
+/.DS_Store
+*.sql
+mysqldata

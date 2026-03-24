@@ -1,0 +1,49 @@
+services:
+  billing_nginx:
+    container_name: billing_nginx
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8888:80"
+    volumes:
+      - ./:/var/www/billing
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - billing_app
+    networks:
+      - billing
+
+  billing_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: billing_app
+    volumes:
+      - ./:/var/www/billing
+    depends_on:
+      - billing_db
+    # command: sh -c "composer install"
+    networks:
+      - billing
+
+  billing_db:
+    image: mysql:8.0
+    container_name: billing_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - billing
+
+networks:
+  billing:
+    driver: bridge
+
